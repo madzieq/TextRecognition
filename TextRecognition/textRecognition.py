@@ -1,9 +1,10 @@
-####################################
-# title: Detect Markers            #
-# version: 1.0                     #
-# author: Magdalena Peplowska      #
-# thanks to pytesseract library    #
-####################################
+########################################
+# title: Detect Markers                #
+# version: 1.0                         #
+# author: Magdalena Peplowska          #
+# thanks to pytesseract library        #
+# screens of GUI in GUI_screens folder #
+########################################
 
 import sys
 import cv2
@@ -74,6 +75,7 @@ class GUI(QtGui.QMainWindow):
 
 
     def backgroundUpdate(self):
+        ''' Hide previous picture choosen by user. '''
         tlo = QtGui.QLabel(self)
         tlo.setPixmap(QtGui.QPixmap('background.png'))
         tlo.move(30,110)
@@ -82,6 +84,7 @@ class GUI(QtGui.QMainWindow):
         
     
     def showImage(self, image, path):
+        ''' Show image in GUI. '''
         if (image.size[0]<710 and image.size[1]<356):
             pic = QtGui.QLabel(self)
             pic.setPixmap(QtGui.QPixmap(path))
